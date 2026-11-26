@@ -1,0 +1,9 @@
+# Demo mode: three sample inboxes from data/sample_emails.json. No accounts or sign-in needed.
+user_name: Aditya
+lookback_days: 4
+model: claude-opus-5-5
+vip_senders: [l.moreau@school.example.edu, mom.k@gmail.example.com]
+accounts:
+  - {label: school,   provider: mock, address: aditya@school.example.edu,        tone: "polite and professional", priority: 3}
+  - {label: personal, provider: mock, address: aditya.k@gmail.example.com,       tone: "casual and warm",         priority: 1}
+  - {label: club,     provider: mock, address: aditya@robotics-club.example.org, tone: "friendly but organised",  priority: 2}

@@ -1,0 +1,27 @@
+# Copy to config.yaml and fill in your own test accounts. config.yaml is git-ignored.
+user_name: Your Name
+lookback_days: 3            # how far back to scan each inbox
+model: claude-opus-5-5      # Claude model used for triage and drafts
+vip_senders:                # people (or whole domains) to rank higher
+  - professor@school.edu
+  - school.edu
+accounts:
+  - label: personal                       # short tag shown in the digest
+    provider: gmail
+    address: you@gmail.com
+    tone: casual and warm
+    priority: 1                           # tie-breaker when a thread reached several of your addresses
+    max_emails: 50
+    credentials_file: secrets/gmail_credentials.json   # OAuth client from Google Cloud (see SETUP.md)
+    # token_file defaults to secrets/token_personal.json (created after first sign-in)
+
+  - label: school
+    provider: outlook
+    address: you@school.edu
+    tone: polite and professional
+    priority: 3
+    max_emails: 50
+    client_id: 00000000-0000-0000-0000-000000000000    # Azure app registration (see SETUP.md)
+    tenant: common                                     # or "consumers" for personal outlook.com accounts
+
+  # Add a second Gmail account the same way, with its own label (the token file is per label).
